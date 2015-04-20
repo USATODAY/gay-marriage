@@ -19,15 +19,11 @@ define(
             render: function() {
 
               
-              //currently hard coding video_id until i get video collections/models up and running
               this.$el.html(this.template(this.model.toJSON()));
-              // this.reformatVideos();
               return this;
             },
             activate: function() {
-              console.log("activate");
               brightcove.createExperiences();
-              // this.reformatVideos();
             },
             reformatVideos: function() {
                 var fullHeight, fullWidth;
@@ -39,7 +35,6 @@ define(
                   if(this.bcExperience !== undefined) {
 
                     if (this.bcExperience.experience.type == "html") {
-                      console.log("num width: " + numWidth);
                       //convert percent to pixels
                       fullWidth = numWidth/100 * window.innerWidth;
                       fullHeight = window.innerHeight;
@@ -47,7 +42,6 @@ define(
                     } 
 
                   } else {
-                    console.log(undefined);
                   }
 
                 } else {
@@ -67,7 +61,6 @@ define(
                     }
                     
                   } else {
-                    console.log(undefined);
                   }
                 }
 
@@ -75,17 +68,12 @@ define(
             
             },
             onVideoReady: function(bcObj) {
-              console.log(this);
               
-              console.log("video ready");
               this.bcPlayer = bcObj.player;
 
               this.pauseVideo();
               this.bcExperience = bcObj.experience;
-              console.log(this.bcPlayer);
-              // this.setVideo "4027676240001");
               this.reformatVideos();
-              // $(window).trigger("resize");
             },
 
             pauseVideo: function() {
@@ -97,7 +85,6 @@ define(
             },
 
             setVideo: function(bcId) {
-              // console.log(this.bcPlayer);
               this.bcPlayer.loadVideoByID(bcId);
             },
 

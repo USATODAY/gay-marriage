@@ -29,34 +29,49 @@ define(
             return availableTags;
         },
         filterByTagArray: function(filterArray) {
-            function arrContains(array1, array2) {
-                var diff = _.difference(array1, array2);
-                if (diff.length === 0) {
-                    return true;
-                } else {
-                    return false;
-                }
-            }
+            var _this = this;
 
             this.each(function(model) {
                 var modelTags = model.get('tags');
-                var isAvailable = arrContains(filterArray, modelTags);
+                var intersection = _.intersection(filterArray, modelTags);
+                var isAvailable = intersection.length > 0;
 
                 if (isAvailable) {
-                    model.set({'isAvailable': true});
+                    model.set({'isAvailable': true, 'numTagsApplicable': intersection.length});
                 } else {
-                    model.set({'isAvailable': false});
+                    model.set({'isAvailable': false, 'numTagsApplicable': 0});
                 }
             });
 
-            //cache a copy of filtered vids
+            //cache a copy of filtered vids, sorted by number of tags they apply for
             this._availableVids = this.where({'isAvailable': true});
+            this._availableVids = _.sortBy(this._availableVids, function(vidModel) {
+                return - vidModel.get('numTagsApplicable');
+            });
 
         },
         pickVideo: function() {
-            var randomIndex = Math.floor(Math.random() * this._availableVids.length);
-            return this._availableVids[randomIndex];
-        }
+            //return and remove the first video
+            return this._availableVids.shift();
+        },
+
+        arrContains: function(array1, array2) {
+            // var diff = _.difference(array1, array2);
+            // if (diff.length === 0) {
+                // return true;
+            // } else {
+                // return false;
+            // }
+            
+            var intersection = _.intersection(array1, array2);
+            if (intersection.length > 0) {
+                return true;
+            } else  {
+                return false;
+            }
+        },
+
+        _availableVids: []
         
     });
 

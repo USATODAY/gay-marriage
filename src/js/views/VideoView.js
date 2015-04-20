@@ -181,8 +181,14 @@ define(
         },
         onVideoEnded: function() {
             Analytics.trackEvent("Video finished");
-            if (!config.isMobile) {
-                Backbone.trigger('index:show');
+            if (this.collection._availableVids.length > 0) {
+                this.selectedVideoModel = this.collection.pickVideo();
+                Backbone.trigger('video:next', this.selectedVideoModel);
+                Backbone.trigger('app:goBack');
+            } else {
+                 if (!config.isMobile) {
+                    Backbone.trigger('index:show');
+                }
             }
             
             // this.onTopicsClick();
