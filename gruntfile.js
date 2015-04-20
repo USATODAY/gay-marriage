@@ -20,6 +20,7 @@ module.exports = function(grunt) {
     "jquery_ui": "lib/jquery-ui.min",
     "jquery_ui_touch_punch": "lib/jquery.ui.touch-punch.min",
     "api/analytics": "lib/analytics",
+    "isotope": "../../bower_components/isotope/dist/isotope.pkgd",
     "d3": '../../bower_components/d3/d3',
     "mapbox": '../../bower_components/mapbox.js/mapbox.uncompressed'
   };

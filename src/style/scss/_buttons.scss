@@ -1,15 +1,49 @@
 .button {
-  background-color: $blue;
-  color: white;
+  @include BoxShadowHelper(1);
+  border-radius: 50%;
+  border: solid 4px $dark-grey;
+  color: $dark-grey;
+  font-size: 1em;
+  height: 5em;
+  line-height: 1.2;
   margin: 0 auto;
-  padding: 1em;
+  opacity: 1;
+  position: relative;
   text-align: center;
   text-transform: uppercase;
-  transition: background-color .5s;
-  width: 120px;
+  transition: all .5s;
+  width: 5em;
   &:hover{
+    @include BoxShadowHelper(2);
+    color: white;
     cursor: pointer;
-    background-color: $dark-blue;
+    background-color: $dark-grey;
     transition: background-color .5s;
   }
+
+  &.hide {
+    opacity: 0;
+  }
 }
+
+.iapp-button-text {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.iapp-clickable {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.iapp-button-small {
+  height: 4em;
+  width: 4em;
+  .iapp-button-text {
+    font-size: 0.75em;
+  }
+}
+

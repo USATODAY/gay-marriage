@@ -1,0 +1,60 @@
+/************
+
+3d flip card
+
+example markup:     
+
+<div class="iapp-flip-container">
+    <div class="iapp-flip-item">
+        <div class="iapp-flip-front">This is the front</div>
+        <div class="iapp-flip-back">This is the back</div>
+    </div>
+</div>
+
+************/
+
+.iapp-flip-container {
+
+}
+
+.iapp-flip-item {
+    width: 100%;
+    min-height: 100%;
+    position: absolute;
+    perspective: 900px;
+    transform-style: preserve-3d;
+    transition: transform 500ms;
+
+    .iapp-flip-back, .iapp-flip-front {
+
+        display: block;
+        position: absolute;
+        width: 100%;
+        min-height: 100%;
+        backface-visibility: hidden;
+        transition: transform 500ms;
+
+        * {
+            backface-visibility: hidden;
+        }
+    }
+
+    .iapp-flip-front {
+        transform: rotateY(0deg);
+    }
+
+    .iapp-flip-back {
+        transform: rotateY( -180deg );
+    }
+
+    &.iapp-flipped {
+        
+        .iapp-flip-front {
+            transform: rotateY(-180deg);
+        }
+
+        .iapp-flip-back {
+            transform: rotateY( -360deg );
+        }
+    }
+}

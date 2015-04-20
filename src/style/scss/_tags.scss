@@ -1,0 +1,48 @@
+.iapp-tag-container {
+    @extend .group;
+
+
+}
+
+.iapp-tag-intro .iapp-video-greeting{
+    text-align: center;
+}
+.iapp-tag-item {
+    // animation: fadeOut 250ms linear backwards;
+    border: solid 1px $dark-grey;
+    border-radius: 5px;
+    color: $dark-grey; 
+    cursor: pointer;
+    display: inline-block;
+    float: left;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    padding: 5px;
+    transition: border 200ms ease, color 200ms ease, background 200ms ease;
+    &:hover {
+        background-color: $dark-grey;
+        color: white;
+    }
+
+    &.active {
+        background-color: $dark-grey;
+        border: solid 1px $dark-grey;
+        color: white;
+    }
+
+    &.unavailable {
+        // display: none;
+        // animation: fadeOut 250ms linear forwards;
+    }
+}
+
+.tags-next-button {
+    margin-top: 1em;
+}
+
+
+.iapp-topics-back-button {
+    position: absolute;
+    right: 1em;
+    top: 1em;
+}

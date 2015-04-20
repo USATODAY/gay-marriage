@@ -1,0 +1,40 @@
+.iapp-share-panel {
+    background-color: rgba(50, 50, 50, 0.8);
+    color: white;
+    filter: none;
+    padding: 2em;
+    z-index: 18;
+}
+
+.iapp-share-close {
+    position: absolute;
+    right: 1em;
+    top: 1em;
+    width: 60px;
+}
+
+.iapp-share-button {
+    display: block;
+    margin: 1em auto 0 auto;
+    width: 60px;
+    img {
+        display: block;
+    }
+}
+
+.iapp-share-preview {
+    font-family: "Futura Today Light", Arial,sans-serif;
+}
+
+.iapp-share-buttons {
+    margin-top: 2em;
+}
+
+@media(max-width: 600px) {
+    .iapp-share-button {
+        margin-top: 0.5em;
+    }
+    .iapp-share-buttons {
+        margin-top: 1em;
+    }
+}
