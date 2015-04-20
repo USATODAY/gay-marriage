@@ -39,7 +39,7 @@ define(
         template: templates['video.html'],
         render: function(videoModel) {
             // console.log(this.collection);
-            if (videoModel != undefined) {
+            if (videoModel !== undefined) {
                 this.selectedVideoModel = videoModel;
             } 
             
@@ -63,7 +63,7 @@ define(
 
             // console.log(brightcoveView);
             var currentVideo = this.collection.find(function(video) {
-                video.isActive == true;
+                return video.isActive === true;
             });
 
             
@@ -156,7 +156,7 @@ define(
         },
         addShare: function() {
 
-            if (this.shareView == undefined) {
+            if (this.shareView === undefined) {
                 this.shareView = new ShareView({model:  this.selectedVideoModel});
                 $('.iapp-wrap').append(this.shareView.render().el);
             } else {
@@ -173,7 +173,7 @@ define(
              $('.iapp-index-panel').removeClass('iapp-blur');
         },
         addCredits: function() {
-            if (this.creditsView == undefined) {
+            if (this.creditsView === undefined) {
                  this.creditsView = new CreditsView({model: new CreditsModel()});
                 $('.iapp-wrap').append(this.creditsView.render().el);
             }

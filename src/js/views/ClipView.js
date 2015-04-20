@@ -24,7 +24,7 @@ define(
                 Backbone.trigger("update:video", this.model);
                 Backbone.trigger("index:hide");
             }
-        })
+        });
 
 
 });

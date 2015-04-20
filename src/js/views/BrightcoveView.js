@@ -30,7 +30,7 @@ define(
               // this.reformatVideos();
             },
             reformatVideos: function() {
-                console.log("reformat Videos");
+                var fullHeight, fullWidth;
                 var numWindowWidth = window.innerWidth;
                 if (window.innerWidth / window.innerHeight < 1920 / 1080) {
                   var numWidth = 100 * ((1920 / 1080) / (window.innerWidth / window.innerHeight));
@@ -41,9 +41,9 @@ define(
                     if (this.bcExperience.experience.type == "html") {
                       console.log("num width: " + numWidth);
                       //convert percent to pixels
-                      var fullWidth = numWidth/100 * window.innerWidth;
-                      var fullHeight = window.innerHeight;
-                      this.bcExperience.setSize(fullWidth, fullHeight)
+                      fullWidth = numWidth/100 * window.innerWidth;
+                      fullHeight = window.innerHeight;
+                      this.bcExperience.setSize(fullWidth, fullHeight);
                     } 
 
                   } else {
@@ -59,8 +59,8 @@ define(
 
                      if (this.bcExperience.experience.type == "html") {
                       //convert percent to pixels
-                      var fullHeight = numHeight/100 * window.innerHeight;
-                      var fullWidth = window.innerWidth;
+                      fullHeight = numHeight/100 * window.innerHeight;
+                      fullWidth = window.innerWidth;
 
                    
                       this.bcExperience.setSize(fullWidth, fullHeight);

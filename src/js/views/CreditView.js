@@ -26,7 +26,7 @@ define(
 
                 this.$el.addClass('active').removeClass('upcoming');
             }
-        })
+        });
 
 
 });

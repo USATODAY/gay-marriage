@@ -30,7 +30,7 @@ define(
             this.$el.html(this.template({tag_text: dataManager.data.tag_text, greeting: this.getGreeting()}));
             
             this.collection.each(function(tagModel) {
-                 var tagView = new TagView({model: tagModel})
+                 var tagView = new TagView({model: tagModel});
                  _this.$('.iapp-tag-container').append(tagView.render().el);
             });
 
@@ -61,7 +61,7 @@ define(
             }
         },
         showNext: function(blnShow) {
-            if(blnShow == true) {
+            if(blnShow === true) {
                $('.tags-next-button').removeClass('hide'); 
             } else {
                 $('.tags-next-button').addClass('hide');

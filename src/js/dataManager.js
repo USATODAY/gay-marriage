@@ -100,7 +100,7 @@ define(
             this.data.tags = uniqueTags;
         },
         userName: ''
-    }
+    };
 
 
 });

@@ -43,7 +43,7 @@ define(
         },
 
         onUserSet: function(name) {
-            this.set({'userName': name})
+            this.set({'userName': name});
         },
 
         createFbShareURL: function() {

@@ -21,14 +21,14 @@ define(
                         return {
                             'credit_text': credit,
                             'credit_url': twitterUrl
-                        } 
+                        };
                     } else {
                         return {
                             'credit_text': credit,
                             'credit_url': null
-                        }
+                        };
                     }
-                })
+                });
                 this.set({
                     'credits_intro': dataManager.data.credits_intro,
                     'project_credits': creditsObjs
