@@ -11,7 +11,6 @@ define(
         initialize: function() {
             
             this.on('change:isActive', this.onActiveChange); 
-            this.listenTo(Backbone, 'videos:filtered', this.onVideosFiltered);
             this.listenTo(Backbone, 'tags:reset', this.onTagsReset);
         },
 

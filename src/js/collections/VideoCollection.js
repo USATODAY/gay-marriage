@@ -29,18 +29,11 @@ define(
             return availableTags;
         },
         filterByTagArray: function(filterArray) {
-            function arrContains(array1, array2) {
-                var diff = _.difference(array1, array2);
-                if (diff.length === 0) {
-                    return true;
-                } else {
-                    return false;
-                }
-            }
+            var _this = this;
 
             this.each(function(model) {
                 var modelTags = model.get('tags');
-                var isAvailable = arrContains(filterArray, modelTags);
+                var isAvailable = _this.arrContains(filterArray, modelTags);
 
                 if (isAvailable) {
                     model.set({'isAvailable': true});
@@ -51,11 +44,28 @@ define(
 
             //cache a copy of filtered vids
             this._availableVids = this.where({'isAvailable': true});
+            console.log(this._availableVids);
 
         },
         pickVideo: function() {
             var randomIndex = Math.floor(Math.random() * this._availableVids.length);
             return this._availableVids[randomIndex];
+        },
+
+        arrContains: function(array1, array2) {
+            // var diff = _.difference(array1, array2);
+            // if (diff.length === 0) {
+                // return true;
+            // } else {
+                // return false;
+            // }
+            
+            var intersection = _.intersection(array1, array2);
+            if (intersection.length > 0) {
+                return true;
+            } else  {
+                return false;
+            }
         }
         
     });

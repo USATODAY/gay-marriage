@@ -12,7 +12,7 @@ define(
             'brightcoveid': '',
             'interviewee': '',
             'isActive': false,
-            'isAvailable': true,
+            'isAvailable': false,
             'videodescription': '',
             'tags': [],
             'userName': '',
