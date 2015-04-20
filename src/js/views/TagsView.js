@@ -12,6 +12,7 @@ define(
         initialize: function() {
            this.listenTo(this.collection, 'change:isActive', this.filter);
            this.listenTo(Backbone, 'video:set', this.advanceSub);
+           this.listenTo(Backbone, 'video:next', this.advanceSub);
            this.listenTo(Backbone, 'tags:reset', this.onTagsReset);
         },
         events: {
@@ -83,9 +84,11 @@ define(
             }
             return result;
         },
-        advanceSub: function(selectedVideoModel) {
-            
+        renderGreeting: function(selectedVideoModel) {
             this.$('.iapp-tag-intro').html(this.greetingTemplate(selectedVideoModel.toJSON()));
+        },
+        advanceSub: function(selectedVideoModel) {
+            this.renderGreeting(selectedVideoModel);
             
             this.$('.iapp-tag-sub1').removeClass('active').addClass('done');
             this.$('.iapp-tag-intro').removeClass('upcoming').addClass('active');

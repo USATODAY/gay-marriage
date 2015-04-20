@@ -33,23 +33,26 @@ define(
 
             this.each(function(model) {
                 var modelTags = model.get('tags');
-                var isAvailable = _this.arrContains(filterArray, modelTags);
+                var intersection = _.intersection(filterArray, modelTags);
+                var isAvailable = intersection.length > 0;
 
                 if (isAvailable) {
-                    model.set({'isAvailable': true});
+                    model.set({'isAvailable': true, 'numTagsApplicable': intersection.length});
                 } else {
-                    model.set({'isAvailable': false});
+                    model.set({'isAvailable': false, 'numTagsApplicable': 0});
                 }
             });
 
-            //cache a copy of filtered vids
+            //cache a copy of filtered vids, sorted by number of tags they apply for
             this._availableVids = this.where({'isAvailable': true});
-            console.log(this._availableVids);
+            this._availableVids = _.sortBy(this._availableVids, function(vidModel) {
+                return - vidModel.get('numTagsApplicable');
+            });
 
         },
         pickVideo: function() {
-            var randomIndex = Math.floor(Math.random() * this._availableVids.length);
-            return this._availableVids[randomIndex];
+            //return and remove the first video
+            return this._availableVids.shift();
         },
 
         arrContains: function(array1, array2) {
@@ -66,7 +69,9 @@ define(
             } else  {
                 return false;
             }
-        }
+        },
+
+        _availableVids: []
         
     });
 
