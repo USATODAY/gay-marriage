@@ -183,7 +183,7 @@ __p += '\n    \n    <p class="iapp-share-preview">' +
 ((__t = (fb_redirect)) == null ? '' : __t) +
 '\' class="iapp-share-button iapp-share-facebook iapp-share-popup" target="_blank"><img src="http://www.gannett-cdn.com/experiments/usatoday/2015/02/black-history/img/facebook.svg" alt="Facebook share"></a>\n        <a href="' +
 ((__t = (email_link)) == null ? '' : __t) +
-'" class="iapp-share-button iapp-share-email"><img src="http://www.gannett-cdn.com/experiments/usatoday/2015/02/black-history/img/email.svg" alt="Email share"></a>\n    </div>\n</div>';
+'" class="iapp-share-button iapp-share-email"><img src="http://www.gannett-cdn.com/experiments/usatoday/2015/02/black-history/img/email.svg" alt="Email share"></a>\n    </div>\n    <div id="iapp-fb-embed"></div>\n</div>\n';
 
 }
 return __p

@@ -7,9 +7,10 @@ define(
         'isotope',
         'dataManager',
         'views/AppView',
+        'pym',
         'templates'
     ],
-    function(require, jQuery, _, Backbone, Isotope, dataManager, AppView, templates) {
+    function(require, jQuery, _, Backbone, Isotope, dataManager, AppView, pym, templates) {
         return {
             init: function() {
 
@@ -38,6 +39,8 @@ define(
                                 $('.iapp-wrap').addClass('tablet');
                             }
                         }
+                        console.log('pym:');
+                        console.log(pym);
 
                         //set global callback for Brightcove videos to use
                         window.onTemplateReady = function(evt) {

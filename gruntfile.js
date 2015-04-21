@@ -22,6 +22,7 @@ module.exports = function(grunt) {
     "api/analytics": "lib/analytics",
     "isotope": "../../bower_components/isotope/dist/isotope.pkgd",
     "d3": '../../bower_components/d3/d3',
+    "pym": '../../bower_components/pym.js/dist/pym',
     "mapbox": '../../bower_components/mapbox.js/mapbox.uncompressed'
   };
 

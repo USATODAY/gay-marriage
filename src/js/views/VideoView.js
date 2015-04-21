@@ -164,6 +164,8 @@ define(
                 this.shareView = new ShareView({model:  this.selectedVideoModel});
                 $('.iapp-wrap').append(this.shareView.render().el);
             }
+
+            this.shareView.addFbEmbed();
             
         },
         onShareClose: function() {

@@ -4,14 +4,14 @@ define(
         'underscore',
         'backbone',
         'templates',
+        'pym',
         'api/analytics'
     ],
-    function(jQuery, _, Backbone, templates, Analytics) {
+    function(jQuery, _, Backbone, templates, pym, Analytics) {
         return Backbone.View.extend({
             render: function() {
                 
                 this.$el.html(this.template(this.model.toJSON()));
-
 
 
                 return this;
@@ -19,6 +19,9 @@ define(
             events: {
                 'click .iapp-share-close': 'onClickClose',
                 'click .iapp-share-popup': 'onShareButtonClick'
+            },
+            addFbEmbed: function() {
+                pym.Parent('iapp-fb-embed', 'http://www.gannett-cdn.com/experiments/usatoday/2015/04/intheirwords-lgbt-fb/index.html');
             },
             template: templates['share.html'],
             className: 'iapp-share-panel iapp-panel upcoming',
