@@ -15,7 +15,7 @@ define(
             },
 
             initialize: function() {
-                this.set({'fist_name': helper.cleanTag(this.get('first_name'))});
+                this.set({'first_name': helper.cleanTag(this.get('first_name'))});
             }
     });
 

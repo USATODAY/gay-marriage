@@ -9,7 +9,7 @@ define(
   function(jQuery, _, Backbone, templates, BrightcoveView) {
     return Backbone.View.extend({
         initialize: function() {
-            
+            this.listenTo(Backbone, "window:resize", this.resizeVideo);
         },
         className: 'iapp-panel active',
         template: templates['intro.html'],
@@ -28,6 +28,18 @@ define(
 
         renderVideo: function() {
             this.$el.append(this.videoTemplate({ video_name: "intro_bg" }));
+            this.resizeVideo();
+        },
+
+        resizeVideo: function() {
+            console.log('window resize');
+            var $videoEl = this.$('video');
+            if (window.innerWidth / window.innerHeight < 1920 / 1080) {
+                var numWidth = 100 * ((1920 / 1080) / (window.innerWidth / window.innerHeight));
+                $videoEl.css({"width" : numWidth.toString() + "%", "left" : ((100 - numWidth) / 2).toString() + "%"});
+            } else {
+                $videoEl.css({"width" : "100%", "left" : "0%"});
+            }
         }
     });
 

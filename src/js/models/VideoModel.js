@@ -28,7 +28,6 @@ define(
                 this.attributes.tags = this.attributes.tags.split(', ');
             }
 
-        
             //set sharable language and urls for each model
             this.set({
                 'fbShare': this.createFbShareURL(),
@@ -39,7 +38,7 @@ define(
                 'email_link': this.createEmailLink(),
                 'first_name': helper.cleanTag(this.get('first_name'))
             });
-            
+            console.log(this.toJSON());
             
 
             this.listenTo(Backbone, 'name:set', this.onUserSet);
