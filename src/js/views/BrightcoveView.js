@@ -23,6 +23,7 @@ define(
               return this;
             },
             activate: function() {
+                console.log("brightcove view activated");
               brightcove.createExperiences();
             },
             reformatVideos: function() {
@@ -68,10 +69,10 @@ define(
             
             },
             onVideoReady: function(bcObj) {
-              
+              console.log("brightcove view video ready listener");
               this.bcPlayer = bcObj.player;
 
-              this.pauseVideo();
+              // this.pauseVideo();
               this.bcExperience = bcObj.experience;
               this.reformatVideos();
             },

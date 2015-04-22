@@ -32,6 +32,9 @@ define(
                     
                     _this.$('.iapp-people-index').append(personView.render().el);
                 });
+
+                var blackHistoryUrl = this.getProjectUrl('InTheirWords');
+                this.$('.iapp-people-index').append(this.otherProjectLinkTemplate({link_image: "http://www.gannett-cdn.com/experiments/usatoday/2015/04/gay-marriage/img/black-history-promo.png", link_url: blackHistoryUrl, link_text: "InTheirWords Black History"}));
             },
             renderClips: function() {
                 var _this = this;
@@ -47,9 +50,16 @@ define(
                         // containerStyle: null
                         // layoutMode: 'fitRows'
 
+                    });
                 });
-            });
             },
+
+            getProjectUrl: function(path) {
+                var origin = window.location.origin;
+                return origin + "/pages/interactives/" + path;
+            },
+
+            otherProjectLinkTemplate: templates["otherProjectLink.html"],
 
             events: {
                 'click .iapp-index-back-close': 'onBackCloseClick',
