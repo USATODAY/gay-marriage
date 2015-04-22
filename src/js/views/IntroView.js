@@ -16,17 +16,18 @@ define(
         render: function(data) {
             
             this.$el.html(this.template({head: data.project_head, chatter: data.intro_text}));
-                        return this;
+            this.renderVideo();
+            return this;
         },
         createVideoModel: function() {
             var videoModel = new Backbone.Model({brightcoveid: 4189256781001, ready_handler: 'introTemplateReady'});
             return videoModel;
         },
 
+        videoTemplate: templates["IntroVideo.html"],
+
         renderVideo: function() {
-            this.brightcoveView = new BrightcoveView({model: this.createVideoModel()});
-            this.$el.append(this.brightcoveView.render().el);
-            this.brightcoveView.activate();
+            this.$el.append(this.videoTemplate({ video_name: "intro_bg" }));
         }
     });
 
