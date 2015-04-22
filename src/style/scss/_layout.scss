@@ -79,6 +79,7 @@ panel positions
   max-width: 900px;
   position: static;
   transform: none;
+  z-index: 5;
   @media(min-width: 600px) {
     left: 50%;
     margin-top: 0;

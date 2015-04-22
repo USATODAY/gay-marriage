@@ -2,9 +2,10 @@ define(
     [
         'jquery',
         'underscore',
-        'backbone'
+        'backbone',
+        'helper'
     ],
-    function(jQuery, _, Backbone){
+    function(jQuery, _, Backbone, helper){
 
         return Backbone.Model.extend( {
             defaults: {
@@ -14,7 +15,7 @@ define(
             },
 
             initialize: function() {
-                
+                this.set({'first_name': helper.cleanTag(this.get('first_name'))});
             }
     });
 

@@ -2,6 +2,20 @@ define(function(){
 
 this["templates"] = this["templates"] || {};
 
+this["templates"]["IntroVideo.html"] = function(obj) {
+obj || (obj = {});
+var __t, __p = '', __e = _.escape;
+with (obj) {
+__p += '\n<video id="introvid" class="bgvideo" loop autoplay poster="http://www.gannett-cdn.com/experiments/usatoday/2014/gas-leaks/img/intro-still.jpg">\n    <source src="http://www.gannett-cdn.com/experiments/usatoday/2015/04/gay-marriage/media/' +
+((__t = ( video_name)) == null ? '' : __t) +
+'.mp4" type="video/mp4" />\n    <source src="http://www.gannett-cdn.com/experiments/usatoday/2015/04/gay-marriage/media/' +
+((__t = ( video_name)) == null ? '' : __t) +
+'.ogv" type="video/ogg" />\n</video>\n';
+
+}
+return __p
+};
+
 this["templates"]["app.html"] = function(obj) {
 obj || (obj = {});
 var __t, __p = '', __e = _.escape;
@@ -26,7 +40,7 @@ __p += '<!-- Start of Brightcove Player -->\n\n<div style="display:none">\nInter
 ((__t = (brightcoveid)) == null ? '' : __t) +
 '" class="BrightcoveExperience">\n  <param name="bgcolor" value="#FFFFFF" />\n  <param name="width" value="640" />\n  <param name="height" value="390" />\n  <param name="playerID" value="1797379879001" />\n  <param name="playerKey" value="AQ~~,AAAABvaL8JE~,ufBHq_I6FnzwGj3ZkG57q5Cei-R6yZca" />\n  <param name="isSlim" value="true" />\n  <param name="dynamicStreaming" value="true" />\n  <param name="includeAPI" value="true" />\n    \n  <param name="@videoPlayer" value="' +
 ((__t = (brightcoveid)) == null ? '' : __t) +
-'" />\n  <param name="templateReadyHandler" value="onTemplateReady" />\n  <param name="wmode" value="opaque" />\n</object>\n\n\n<!-- End of Brightcove Player -->';
+'" />\n  <param name="templateReadyHandler" value="onTemplateReady" />\n  <param name="wmode" value="opaque" />\n</object>\n\n\n<!-- End of Brightcove Player -->\n';
 
 }
 return __p
@@ -125,6 +139,22 @@ __p += '<div class="iapp-panel iapp-name-input-panel active">\n    <div class="i
 '</h3>\n        <h2 class="iapp-name-info iapp-panel-text-main">' +
 ((__t = (name_text)) == null ? '' : __t) +
 '</h2>\n        <input type="text" class="iapp-name-input" placeholder="TYPE YOUR NAME HERE">\n        <div class="iapp-name-skip-button iapp-clickable">Skip</div>\n        <div class="name-next-button button iapp-clickable"><div class="iapp-button-text">Next</div></div>\n    </div>\n</div>\n';
+
+}
+return __p
+};
+
+this["templates"]["otherProjectLink.html"] = function(obj) {
+obj || (obj = {});
+var __t, __p = '', __e = _.escape;
+with (obj) {
+__p += '<a href="' +
+((__t = (link_url)) == null ? '' : __t) +
+'" >\n    <div class="iapp-person-image-wrap iapp-clickable">\n        <img src="' +
+((__t = (link_image)) == null ? '' : __t) +
+'" alt="' +
+((__t = (link_text)) == null ? '' : __t) +
+'" class="iapp-person-item-img">\n        <div class="iapp-person-more-video-button">\n            See Project\n        </div>\n    </div>\n</a>\n';
 
 }
 return __p

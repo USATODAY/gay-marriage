@@ -3,9 +3,10 @@ define(
     'jquery',
     'underscore',
     'backbone',
+    'helper',
     'models/config'
   ],
-  function(jQuery, _, Backbone, config){
+  function(jQuery, _, Backbone, helper, config){
 
     return Backbone.Model.extend( {
         defaults: {
@@ -18,7 +19,8 @@ define(
             'userName': '',
             'sharelanguage': '',
             'stillimage': '',
-            'hashtags': ''
+            'hashtags': '',
+            'ready_handler': 'onTemplateReady'
         },
 
         initialize: function() {
@@ -26,7 +28,6 @@ define(
                 this.attributes.tags = this.attributes.tags.split(', ');
             }
 
-        
             //set sharable language and urls for each model
             this.set({
                 'fbShare': this.createFbShareURL(),
@@ -34,13 +35,16 @@ define(
                 'encodedShare': encodeURIComponent(this.get('sharelanguage')),
                 'fb_id': config.fb_app_id,
                 'fb_redirect': 'http://' + window.location.hostname + '/pages/interactives/fb-share/',
-                'email_link': this.createEmailLink()
+                'email_link': this.createEmailLink(),
+                'first_name': helper.cleanTag(this.get('first_name'))
             });
-            
+            console.log(this.toJSON());
             
 
             this.listenTo(Backbone, 'name:set', this.onUserSet);
         },
+
+        
 
         onUserSet: function(name) {
             this.set({'userName': name});

@@ -87,6 +87,7 @@ define(
                 // console.log(dataManager);
                var introView = new IntroView();
                this.$el.append(introView.render(dataManager.data).el);
+               // introView.renderVideo();
                this.subViews.push(introView);
 
                var nameView = new NameView();
