@@ -1,6 +1,6 @@
-#InTheirWords-LGBT
+#InTheirWords-Gay-Marriage
 
-In Their Words LGBT
+In Their Words Gay Marriage
 
 
 Copyright 2015 USA TODAY. All rights reserved. No part of these materials may be reproduced, modified, stored in a retrieval system, or retransmitted, in any form or by any means, electronic, mechanical or otherwise, without prior written permission from USA TODAY.
@@ -23,4 +23,3 @@ Once those dependencies are set up, from this repository run `npm install`, then
 
 
 ###Live version:
-http://www.gannett-cdn.com/experiments/usatoday/2015/04/InTheirWords-LGBT/

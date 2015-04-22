@@ -1,6 +1,6 @@
 {
-  "name": "InTheirWords-LGBT",
-  "description": "In Their Words LGBT",
+  "name": "InTheirWords-Gay-Marriage",
+  "description": "InTheirWords-Gay-Marriage",
   "version": "0.1.0",
   "author": {
     "name": "mitchthorson",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/mthorson/InTheirWords-LGBT.git"
+    "url": "git://github.com/mthorson/gay-marriage.git"
   },
   "scripts": {
     "postinstall": "bower cache clean && bower install"
