@@ -9,9 +9,9 @@
 }
 .iapp-tag-item {
     // animation: fadeOut 250ms linear backwards;
-    border: solid 1px $dark-grey;
+    border: solid 1px white;
     border-radius: 5px;
-    color: $dark-grey; 
+    color: white; 
     cursor: pointer;
     display: inline-block;
     float: left;
@@ -20,14 +20,14 @@
     padding: 5px;
     transition: border 200ms ease, color 200ms ease, background 200ms ease;
     &:hover {
-        background-color: $dark-grey;
-        color: white;
+        background-color: white;
+        color: $dark-grey;
     }
 
     &.active {
-        background-color: $dark-grey;
-        border: solid 1px $dark-grey;
-        color: white;
+        background-color: white;
+        border: solid 1px white;
+        color: $dark-grey;
     }
 
     &.unavailable {
