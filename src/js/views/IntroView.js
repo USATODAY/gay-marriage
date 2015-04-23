@@ -4,18 +4,18 @@ define(
     'underscore',
     'backbone',
     'templates',
+    'models/config',
     'views/BrightcoveView'
   ],
-  function(jQuery, _, Backbone, templates, BrightcoveView) {
+  function(jQuery, _, Backbone, templates, config, BrightcoveView) {
     return Backbone.View.extend({
         initialize: function() {
             this.listenTo(Backbone, "window:resize", this.resizeVideo);
         },
-        className: 'iapp-panel active',
+        className: 'iapp-panel active iapp-intro-panel',
         template: templates['intro.html'],
         render: function(data) {
-            
-            this.$el.html(this.template({head: data.project_head, chatter: data.intro_text}));
+            this.$el.html(this.template({head: data.project_head, chatter: data.intro_text, title: data.title}));
             this.renderVideo();
             return this;
         },
@@ -27,7 +27,7 @@ define(
         videoTemplate: templates["IntroVideo.html"],
 
         renderVideo: function() {
-            this.$el.append(this.videoTemplate({ video_name: "intro_bg" }));
+            this.$el.append(this.videoTemplate({ video_name: "intro_bg", isMobile: config.isMobile }));
             this.resizeVideo();
         },
 
