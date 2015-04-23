@@ -21,7 +21,7 @@ define(
         className: 'iapp-panel iapp-name-panel upcoming',
         template: templates['name.html'],
         render: function() {
-            this.$el.html(this.template({userName: this.userName, name_text: dataManager.data.name_text, greeting: this.getGreeting()}));
+            this.$el.html(this.template({userName: this.userName, head: dataManager.data.project_head, name_text: dataManager.data.name_text, greeting: this.getGreeting()}));
             return this;
         },
         onNextClick: function() {

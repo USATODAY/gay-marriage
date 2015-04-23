@@ -4,13 +4,20 @@ this["templates"] = this["templates"] || {};
 
 this["templates"]["IntroVideo.html"] = function(obj) {
 obj || (obj = {});
-var __t, __p = '', __e = _.escape;
+var __t, __p = '', __e = _.escape, __j = Array.prototype.join;
+function print() { __p += __j.call(arguments, '') }
 with (obj) {
+
+ if (! isMobile) { ;
 __p += '\n<video id="introvid" class="bgvideo" loop autoplay poster="http://www.gannett-cdn.com/experiments/usatoday/2014/gas-leaks/img/intro-still.jpg">\n    <source src="http://www.gannett-cdn.com/experiments/usatoday/2015/04/gay-marriage/media/' +
 ((__t = ( video_name)) == null ? '' : __t) +
 '.mp4" type="video/mp4" />\n    <source src="http://www.gannett-cdn.com/experiments/usatoday/2015/04/gay-marriage/media/' +
 ((__t = ( video_name)) == null ? '' : __t) +
 '.ogv" type="video/ogg" />\n</video>\n';
+ } else { ;
+__p += '\n<img class="iapp-intro-bg-image" src="http://www.gannett-cdn.com/experiments/usatoday/2015/04/gay-marriage/img/mobile_intro.gif" alt="">\n';
+ } ;
+__p += '\n';
 
 }
 return __p
@@ -123,8 +130,8 @@ obj || (obj = {});
 var __t, __p = '', __e = _.escape;
 with (obj) {
 __p += '<div class="iapp-intro-content-wrap iapp-content-wrap">\n    <div class="iapp-content-card">\n        <h2 class="iapp-intro-header iapp-panel-text-main">' +
-((__t = (head)) == null ? '' : __t) +
-'</h2>\n        <div class="intro-next-button button"><div class="iapp-button-text">Next</div></div>\n    </div>  \n</div>';
+((__t = (title)) == null ? '' : __t) +
+'</h2>\n        <div class="intro-next-button button"><div class="iapp-button-text">Begin</div></div>\n    </div>  \n</div>\n';
 
 }
 return __p
@@ -134,9 +141,9 @@ this["templates"]["name.html"] = function(obj) {
 obj || (obj = {});
 var __t, __p = '', __e = _.escape;
 with (obj) {
-__p += '<div class="iapp-panel iapp-name-input-panel active">\n    <div class="iapp-button-small iapp-name-back-button button">\n        <div class="iapp-button-text">\n            Back\n        </div>\n    </div>\n    <div class="iapp-content-wrap">\n        <h2 class="iapp-name-greeting iapp-panel-text-main">' +
-((__t = (greeting)) == null ? '' : __t) +
-'</h3>\n        <h2 class="iapp-name-info iapp-panel-text-main">' +
+__p += '<div class="iapp-panel iapp-name-input-panel active">\n    <div class="iapp-button-small iapp-name-back-button button">\n        <div class="iapp-button-text">\n            Back\n        </div>\n    </div>\n    <div class="iapp-content-wrap">\n        <p class="iapp-name-greeting iapp-panel-text-chatter">' +
+((__t = (head)) == null ? '' : __t) +
+'</p>\n        <h2 class="iapp-name-info iapp-panel-text-main">' +
 ((__t = (name_text)) == null ? '' : __t) +
 '</h2>\n        <input type="text" class="iapp-name-input" placeholder="TYPE YOUR NAME HERE">\n        <div class="iapp-name-skip-button iapp-clickable">Skip</div>\n        <div class="name-next-button button iapp-clickable"><div class="iapp-button-text">Next</div></div>\n    </div>\n</div>\n';
 
@@ -274,7 +281,7 @@ __p += '\n    <h4 class=\'iapp-video-greeting\'>' +
 ((__t = (intro)) == null ? '' : __t) +
 '</h4>\n    ';
 };
-__p += '\n    \n    <div class="iapp-video-info-buttons">\n        <div class="iapp-video-more-button button iapp-button-large"><div class="iapp-button-text">More Videos</div></div>\n        <div class="iapp-video-discuss-button button iapp-button-small"><div class="iapp-button-text">Share</div></div>\n        <div class="iapp-video-credits-button button iapp-button-small"><div class="iapp-button-text">Credits</div></div>\n        <div class="iapp-video-play-button button iapp-button-small"><div class="iapp-button-text">Pause</div></div>\n        <div class="iapp-video-replay-button button iapp-button-small"><div class="iapp-button-text">Replay</div></div>\n        \n        \n    </div>\n</div>\n';
+__p += '\n    \n    <div class="iapp-video-info-buttons">\n        <div class="iapp-video-more-button button iapp-button-large"><div class="iapp-button-text">More Videos</div></div>\n        <div class="iapp-video-discuss-button button iapp-button-small"><div class="iapp-button-text">Share</div></div>\n        <div class="iapp-video-credits-button button iapp-button-small"><div class="iapp-button-text">Credits</div></div>\n        <div class="iapp-video-play-button button iapp-button-small"><div class="iapp-button-text">Pause</div></div>\n        <div class="iapp-video-replay-button button iapp-button-small"><div class="iapp-button-text">Replay</div></div>\n        \n        \n    </div>\n</div>\n\n<div class="iapp-video-loader">\n<div class="loader-img-wrap">\n\n                <img class="loader-img" src="http://www.gannett-cdn.com/experiments/usatoday/2015/03/womens-history/img/loader-white.svg" alt="Loading">\n            </div>\n</div>\n';
 
 }
 return __p

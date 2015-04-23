@@ -1,15 +1,13 @@
 .iapp-name-input {
    background: none;
-   // border: none;
    border-image: none;
    border-style: none;
    border-bottom: solid 4px $dark-grey;
-   // border-radius: 5px;
    box-shadow: none;
    color: $dark-grey;
    font-family: "Futura Today Demibold", Arial,sans-serif;
    font-size: 1.2em;
-   margin-bottom: 2em;
+   margin-bottom: 1em;
    padding: .5em;
    text-align: center;
    transition: all 250ms ease;
@@ -42,8 +40,8 @@
 }
 
 .iapp-name-skip-button {
-    color: $medium-grey; 
-    margin: 2em auto;
+    color: $dark-grey; 
+    margin: 0.5em auto;
     text-align: center;
     text-transform: uppercase;
 }

@@ -17,6 +17,7 @@ define(
     return Backbone.View.extend({
         initialize: function() {
            this.listenTo(Backbone, "render:video", this.renderVideo); 
+           this.listenTo(Backbone, "video:loaded", this.onVideoLoad);
            // this.listenTo(Backbone, "video:ready", this.onVideoReady);
            this.listenTo(Backbone, "video:ended", this.onVideoEnded);
            this.listenTo(Backbone, "get:video", this.onGetVideo);
@@ -194,6 +195,10 @@ define(
             }
             
             // this.onTopicsClick();
+        },
+
+        onVideoLoad: function() {
+            this.$('.iapp-video-loader').hide();
         }
     });
 
