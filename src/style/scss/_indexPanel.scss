@@ -1,4 +1,5 @@
 .iapp-index-panel {
+    color: $dark-grey;
     @include BoxShadowHelper(3);
     box-shadow: $shadow-standard;
     left: auto;
