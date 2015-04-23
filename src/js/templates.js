@@ -67,7 +67,7 @@ obj || (obj = {});
 var __t, __p = '', __e = _.escape, __j = Array.prototype.join;
 function print() { __p += __j.call(arguments, '') }
 with (obj) {
-__p += '<div class="iapp-credits-close iapp-clickable"><img src="http://www.gannett-cdn.com/experiments/usatoday/2015/02/black-history/img/close.svg" alt="close"></div>\n<div class="iapp-content-wrap">\n    <h2 class="iapp-section-header iapp-panel-text-main">About</h2>\n    <p class="iapp-section-text">' +
+__p += '<div class="iapp-credits-close iapp-clickable"><img src="http://www.gannett-cdn.com/experiments/usatoday/2015/04/gay-marriage/img/close.svg" alt="close"></div>\n<div class="iapp-content-wrap">\n    <h2 class="iapp-section-header iapp-panel-text-main">About</h2>\n    <p class="iapp-section-text">' +
 ((__t = (credits_intro)) == null ? '' : __t) +
 '</p>\n    <h2 class="iapp-section-header iapp-panel-text-main">Credits</h2>\n    <h3 class="iapp-project-credits">\n        ';
  _.each(project_credits, function(creditObj) { 
@@ -90,7 +90,7 @@ __p += '\n            <span class="iapp-project-credit-text">' +
   } ;
 __p += '\n         ';
   }) ;
-__p += '\n    </h3>\n</div>';
+__p += '\n    </h3>\n</div>\n';
 
 }
 return __p
@@ -183,7 +183,7 @@ obj || (obj = {});
 var __t, __p = '', __e = _.escape, __j = Array.prototype.join;
 function print() { __p += __j.call(arguments, '') }
 with (obj) {
-__p += '<div class="iapp-share-close iapp-clickable"><img src="http://www.gannett-cdn.com/experiments/usatoday/2015/02/black-history/img/close.svg" alt="close"></div>\n\n<div class="iapp-content-wrap">\n    ';
+__p += '<div class="iapp-share-close iapp-clickable"><img src="http://www.gannett-cdn.com/experiments/usatoday/2015/04/gay-marriage/img/close.svg" alt="close"></div>\n\n<div class="iapp-content-wrap">\n    ';
  if (userName != "") { ;
 __p += '\n    <h2 class="iapp-share-intro iapp-panel-text-main">Your turn, ' +
 ((__t = (userName)) == null ? '' : __t) +
@@ -201,7 +201,7 @@ __p += '\n    \n    <p class="iapp-share-preview">' +
 ((__t = (encodedShare)) == null ? '' : __t) +
 '&hashtags=' +
 ((__t = (hashtags)) == null ? '' : __t) +
-'" class="iapp-share-button iapp-share-twitter iapp-share-popup" target="_blank"><img src="http://www.gannett-cdn.com/experiments/usatoday/2015/02/black-history/img/twitter.svg" alt="Twitter share"></a>\n        <a href=\'https://www.facebook.com/dialog/feed?display=popup&app_id=' +
+'" class="iapp-share-button iapp-share-twitter iapp-share-popup" target="_blank"><img src="http://www.gannett-cdn.com/experiments/usatoday/2015/04/gay-marriage/img/twitter.svg" alt="Twitter share"></a>\n        <a href=\'https://www.facebook.com/dialog/feed?display=popup&app_id=' +
 ((__t = (fb_id)) == null ? '' : __t) +
 '&link=' +
 ((__t = (fbShare)) == null ? '' : __t) +
@@ -211,9 +211,9 @@ __p += '\n    \n    <p class="iapp-share-preview">' +
 ((__t = (encodedShare)) == null ? '' : __t) +
 '&redirect_uri=' +
 ((__t = (fb_redirect)) == null ? '' : __t) +
-'\' class="iapp-share-button iapp-share-facebook iapp-share-popup" target="_blank"><img src="http://www.gannett-cdn.com/experiments/usatoday/2015/02/black-history/img/facebook.svg" alt="Facebook share"></a>\n        <a href="' +
+'\' class="iapp-share-button iapp-share-facebook iapp-share-popup" target="_blank"><img src="http://www.gannett-cdn.com/experiments/usatoday/2015/04/gay-marriage/img/facebook.svg" alt="Facebook share"></a>\n        <a href="' +
 ((__t = (email_link)) == null ? '' : __t) +
-'" class="iapp-share-button iapp-share-email"><img src="http://www.gannett-cdn.com/experiments/usatoday/2015/02/black-history/img/email.svg" alt="Email share"></a>\n    </div>\n    <div id="iapp-fb-embed"></div>\n</div>\n';
+'" class="iapp-share-button iapp-share-email"><img src="http://www.gannett-cdn.com/experiments/usatoday/2015/04/gay-marriage/img/email.svg" alt="Email share"></a>\n    </div>\n    <div id="iapp-fb-embed"></div>\n</div>\n';
 
 }
 return __p

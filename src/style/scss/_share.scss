@@ -1,12 +1,19 @@
 .iapp-share-panel {
-    background-color: rgba(50, 50, 50, 0.8);
-    color: white;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: $dark-grey;
     filter: none;
     padding: 2em;
     z-index: 18;
+
+    .iapp-content-wrap {
+        margin: 1em auto;
+        position: static;
+        transform: none;
+    }
 }
 
 .iapp-share-close {
+    margin: 0 5px;
     position: absolute;
     right: 1em;
     top: 1em;
@@ -15,6 +22,7 @@
 
 .iapp-share-button {
     display: block;
+    float: left;
     margin: 1em auto 0 auto;
     width: 60px;
     img {
@@ -27,7 +35,9 @@
 }
 
 .iapp-share-buttons {
-    margin-top: 2em;
+    margin: 2em auto;
+    width: 210px;
+    @extend .group;
 }
 
 @media(max-width: 600px) {
