@@ -117,3 +117,17 @@
         color: $dark-grey;
     }
 }
+
+.iapp-video-loader{
+    background: $light-grey;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    z-index: 500;
+    .loader-img {
+        animation: spin 1s linear infinite;
+        display: block;
+        height: 50px;
+        width: 50px;
+    }
+}

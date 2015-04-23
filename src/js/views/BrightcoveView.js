@@ -75,6 +75,7 @@ define(
               // this.pauseVideo();
               this.bcExperience = bcObj.experience;
               this.reformatVideos();
+              Backbone.trigger("video:loaded");
             },
 
             pauseVideo: function() {
