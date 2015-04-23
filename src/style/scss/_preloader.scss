@@ -48,3 +48,12 @@
   text-transform: uppercase;
   text-align: center;
 }
+
+.site-preloader-title {
+    color: $dark-grey;
+    left: 50%;
+    position: absolute;
+    text-align: center;
+    transform: translate(-50%, -300%);
+    top: 50%;
+}

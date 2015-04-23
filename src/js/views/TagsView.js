@@ -12,8 +12,9 @@ define(
         initialize: function() {
            this.listenTo(this.collection, 'change:isActive', this.filter);
            this.listenTo(Backbone, 'video:set', this.advanceSub);
-           this.listenTo(Backbone, 'video:next', this.advanceSub);
+           // this.listenTo(Backbone, 'video:next', this.advanceSub);
            this.listenTo(Backbone, 'tags:reset', this.onTagsReset);
+           this.listenTo(Backbone, "video:loaded", this.onVideoLoad);
         },
         events: {
             "click .tags-next-button": "onNextClick",
@@ -88,6 +89,8 @@ define(
             this.$('.iapp-tag-intro').html(this.greetingTemplate(selectedVideoModel.toJSON()));
         },
         advanceSub: function(selectedVideoModel) {
+            Backbone.trigger("app:advance");
+            /*
             this.renderGreeting(selectedVideoModel);
             
             this.$('.iapp-tag-sub1').removeClass('active').addClass('done');
@@ -102,6 +105,7 @@ define(
                
             }, this.addDelay);
 
+            */
         },
         addDelay: 3000,
         onTagsReset: function() {
