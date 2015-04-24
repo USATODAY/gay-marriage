@@ -9,7 +9,7 @@ function print() { __p += __j.call(arguments, '') }
 with (obj) {
 
  if (! isMobile) { ;
-__p += '\n<video id="introvid" class="bgvideo" loop autoplay poster="http://www.gannett-cdn.com/experiments/usatoday/2014/gas-leaks/img/intro-still.jpg">\n    <source src="http://www.gannett-cdn.com/experiments/usatoday/2015/04/gay-marriage/media/' +
+__p += '\n<video id="introvid" class="bgvideo" loop autoplay poster="http://www.gannett-cdn.com/experiments/usatoday/2015/04/gay-marriage/img/intro_bg_still.jpg">\n    <source src="http://www.gannett-cdn.com/experiments/usatoday/2015/04/gay-marriage/media/' +
 ((__t = ( video_name)) == null ? '' : __t) +
 '.mp4" type="video/mp4" />\n    <source src="http://www.gannett-cdn.com/experiments/usatoday/2015/04/gay-marriage/media/' +
 ((__t = ( video_name)) == null ? '' : __t) +
