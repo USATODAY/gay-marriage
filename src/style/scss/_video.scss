@@ -46,21 +46,21 @@
         
     }
     .button {
-        color: white;
-        border: solid 4px white;
+        // color: white;
+        // border: solid 4px white;
         display: inline-block;
         font-size: 0.8em;
         margin: 0 0.5em;
         &:hover {
-            color: $dark-grey;
-            background-color: white;
+            // color: $dark-grey;
+            // background-color: white;
         }
 
         @media(min-width: 600px) {
             margin: 0 1em;
         }
         .iapp-button-text {
-            text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+            // text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
         }
     }
 
@@ -106,15 +106,15 @@
 
 .iapp-video-back-button {
     border: solid 5px white;
-    color: white;
+    // color: white;
     position: absolute;
     right: 1em;
-    text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+    // text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
     top: 1em;
     z-index: 12;
     &:hover {
-        background-color: white;
-        color: $dark-grey;
+        // background-color: white;
+        // color: $dark-grey;
     }
 }
 

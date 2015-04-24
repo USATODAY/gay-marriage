@@ -1,7 +1,8 @@
 .button {
   @include BoxShadowHelper(1);
+  background-color: white;
   border-radius: 50%;
-  border: solid 4px $dark-grey;
+  border: solid 4px white;
   color: $dark-grey;
   font-size: 1em;
   height: 5em;
@@ -15,10 +16,11 @@
   width: 5em;
   &:hover{
     @include BoxShadowHelper(2);
+    border: solid 4px $dark-grey;
     color: white;
     cursor: pointer;
     background-color: $dark-grey;
-    transition: background-color .5s;
+    transition: all .5s;
   }
 
   &.hide {
