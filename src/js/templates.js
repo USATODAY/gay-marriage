@@ -17,7 +17,7 @@ __p += '\n<video id="introvid" class="bgvideo" loop autoplay poster="http://www.
  } else { ;
 __p += '\n<img class="iapp-intro-bg-image" src="http://www.gannett-cdn.com/experiments/usatoday/2015/04/gay-marriage/img/mobile_intro.gif" alt="">\n';
  } ;
-__p += '\n';
+__p += '\n\n<div class="iapp-intro-video-overlay"></div>\n';
 
 }
 return __p

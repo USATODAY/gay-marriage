@@ -11,9 +11,18 @@
 }
 
 .iapp-intro-bg-image {
-    opacity: 0.6;
     position: absolute;
     top: 0;
     left: 0;
+    width: 100%;
+}
+
+.iapp-intro-video-overlay {
+    background-color: transparentize($medium-grey, 0.5);
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
     width: 100%;
 }
