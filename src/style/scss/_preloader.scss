@@ -15,7 +15,7 @@
   width: 100%;
   z-index: 501;
   .loader-img {
-    animation: spin 1s linear infinite;
+    animation: spin 2s linear infinite;
     display: block;
     height: 50px;
     width: 50px;
@@ -47,4 +47,14 @@
   font-family: "Futura Today Light", Arial, sans-serif;
   text-transform: uppercase;
   text-align: center;
+}
+
+.site-preloader-title {
+    color: $dark-grey;
+    font-family: "Futura Today Light", Arial, sans-serif;
+    left: 50%;
+    position: absolute;
+    text-align: center;
+    transform: translate(-50%, -300%);
+    top: 50%;
 }

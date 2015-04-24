@@ -72,9 +72,9 @@ define(
               console.log("brightcove view video ready listener");
               this.bcPlayer = bcObj.player;
 
-              // this.pauseVideo();
               this.bcExperience = bcObj.experience;
               this.reformatVideos();
+              this.pauseVideo();
               Backbone.trigger("video:loaded");
             },
 
@@ -87,7 +87,7 @@ define(
             },
 
             setVideo: function(bcId) {
-              this.bcPlayer.loadVideoByID(bcId);
+              this.bcPlayer.cueVideoByID(bcId);
             },
 
             onVideoEnded: function(bcObj) {

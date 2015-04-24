@@ -18,7 +18,6 @@ define(
         initialize: function() {
            this.listenTo(Backbone, "render:video", this.renderVideo); 
            this.listenTo(Backbone, "video:loaded", this.onVideoLoad);
-           // this.listenTo(Backbone, "video:ready", this.onVideoReady);
            this.listenTo(Backbone, "video:ended", this.onVideoEnded);
            this.listenTo(Backbone, "get:video", this.onGetVideo);
            this.listenTo(Backbone, "update:video", this.updateView);
@@ -120,6 +119,7 @@ define(
         updateView: function(newVideoModel) {
 
 
+            this.$('.iapp-video-loader').show();
 
             this.selectedVideoModel = newVideoModel;
             router.navigate('video/' + this.selectedVideoModel.get('video_clip'));
@@ -138,6 +138,15 @@ define(
             this.$('.iapp-video-greeting').html(newData.userName + ' ' + newData.intro);
 
             this.$('.iapp-video-description').html(newData.videodescription);
+
+            this.$('.iapp-video-question-loader').html(newData.questionasked);
+
+            var _this = this;
+            _.delay(function() {
+                this.$('.iapp-video-loader').fadeOut();
+                _this.brightcoveView.playVideo();
+            }, 3000);
+
         },
         onGetVideo: function() {
             //get random video based on sellected tags from the collection
@@ -184,10 +193,12 @@ define(
         },
         onVideoEnded: function() {
             Analytics.trackEvent("Video finished");
+            console.log("video ended");
             if (this.collection._availableVids.length > 0) {
-                this.selectedVideoModel = this.collection.pickVideo();
-                Backbone.trigger('video:next', this.selectedVideoModel);
-                Backbone.trigger('app:goBack');
+                var selectedVideoModel = this.collection.pickVideo();
+                // Backbone.trigger('video:next', this.selectedVideoModel);
+                this.updateView(selectedVideoModel);
+                // Backbone.trigger('app:goBack');
             } else {
                  if (!config.isMobile) {
                     Backbone.trigger('index:show');
@@ -198,7 +209,12 @@ define(
         },
 
         onVideoLoad: function() {
-            this.$('.iapp-video-loader').hide();
+            console.log("video load");
+            var _this = this;
+            _.delay(function() {
+                this.$('.iapp-video-loader').fadeOut();
+                _this.brightcoveView.playVideo();
+            }, 3000);
         }
     });
 

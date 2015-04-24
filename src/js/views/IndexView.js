@@ -34,10 +34,10 @@ define(
                 });
 
                 var blackHistoryUrl = this.getProjectUrl('InTheirWords');
-                this.$('.iapp-people-index').append(this.otherProjectLinkTemplate({link_image: "http://www.gannett-cdn.com/experiments/usatoday/2015/04/gay-marriage/img/black-history-promo.png", link_url: blackHistoryUrl, link_text: "InTheirWords Black History"}));
+                this.$('.iapp-people-index').append(this.otherProjectLinkTemplate({link_image: "http://www.gannett-cdn.com/experiments/usatoday/2015/04/gay-marriage/img/intheirwords-blackhistory.jpg", link_url: blackHistoryUrl, link_text: "InTheirWords Black History"}));
                 
                 var womenHistoryUrl = this.getProjectUrl('InTheirWords-women');
-                this.$('.iapp-people-index').append(this.otherProjectLinkTemplate({link_image: "http://www.gannett-cdn.com/experiments/usatoday/2015/04/gay-marriage/img/womens-history-promo.png", link_url: womenHistoryUrl, link_text: "InTheirWords Women's History"}));
+                this.$('.iapp-people-index').append(this.otherProjectLinkTemplate({link_image: "http://www.gannett-cdn.com/experiments/usatoday/2015/04/gay-marriage/img/intheirwords-women.jpg", link_url: womenHistoryUrl, link_text: "InTheirWords Women's History"}));
             },
             renderClips: function() {
                 var _this = this;

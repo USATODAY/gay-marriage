@@ -21,8 +21,25 @@ example markup:
     width: 100%;
     min-height: 100%;
     position: absolute;
-    perspective: 900px;
-    transform-style: preserve-3d;
+    @media (min-width: 600px) {
+        perspective: 900px;
+        .iapp-flip-front {
+            transform: rotateY(0deg);
+        }
+
+        .iapp-flip-back {
+            transform: rotateY( -180deg );
+        }    transform-style: preserve-3d;
+    }
+
+    @media (max-width: 600px) {
+        .iapp-flip-front {
+            tranform: translate(0, 0);
+        }
+        .iapp-flip-back {
+            transform: translate(100%, 0);
+        }
+    }
     transition: transform 500ms;
 
     .iapp-flip-back, .iapp-flip-front {
@@ -39,22 +56,30 @@ example markup:
         }
     }
 
-    .iapp-flip-front {
-        transform: rotateY(0deg);
-    }
-
-    .iapp-flip-back {
-        transform: rotateY( -180deg );
-    }
+    
 
     &.iapp-flipped {
-        
-        .iapp-flip-front {
-            transform: rotateY(-180deg);
+
+        @media (min-width: 600px) {
+            .iapp-flip-front {
+                transform: rotateY(-180deg);
+            }
+
+            .iapp-flip-back {
+                transform: rotateY( -360deg );
+            }
         }
 
-        .iapp-flip-back {
-            transform: rotateY( -360deg );
+        @media (max-width: 600px) {
+            .iapp-flip-front {
+                transform: translate(100%, 0);
+            }
+
+            .iapp-flip-back {
+                transform: translate(0, 0);
+            }
         }
+        
+        
     }
 }
