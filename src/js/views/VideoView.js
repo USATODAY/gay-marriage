@@ -37,7 +37,8 @@ define(
             'click .iapp-center-video-play-button': 'onPlayClick',
             'click .iapp-video-topics-button': 'onTopicsClick',
             'click .iapp-video-back-button': 'onTopicsClick',
-            'click .iapp-video-back-to-topics': 'onTopicsClick'
+            'click .iapp-video-back-to-topics': 'onTopicsClick',
+            'click .iapp-center-video-next-button': 'onSkipClick'
  
         },
         className: 'iapp-panel iapp-video-panel upcoming',
@@ -85,10 +86,10 @@ define(
             Backbone.trigger('video:set', this.selectedVideoModel);
         },
         onReplayClick: function() {
+            var _this = this;
             Analytics.trackEvent("Video replay button clicked");
             Backbone.trigger('index:hide');
             this.brightcoveView.bcPlayer.getIsPlaying(cb);
-            var _this = this;
             function cb(result) {
                 if (result) {
                     _this.brightcoveView.bcPlayer.seek(0);
@@ -100,6 +101,13 @@ define(
                 }
             }
             
+        },
+        onSkipClick: function() {
+            var _this = this;
+            this.brightcoveView.bcPlayer.getVideoDuration(false, skipCB);
+            function skipCB(duration) {
+                _this.brightcoveView.bcPlayer.seek(duration);
+            }
         },
         onPlayClick: function() {
             Analytics.trackEvent("Video play/pause button clicked");

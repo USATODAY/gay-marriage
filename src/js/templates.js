@@ -286,6 +286,8 @@ __p += '\n    <h4 class=\'iapp-video-greeting\'>' +
 __p += '\n    \n';
  if (isMobile) { ;
 __p += '\n    <div class="iapp-video-info-buttons">\n        <div class="iapp-video-more-button button iapp-button-large"><div class="iapp-button-text">More Videos</div></div>\n        <div class="iapp-video-discuss-button button iapp-button-small"><div class="iapp-button-text">Share</div></div>\n        <div class="iapp-video-credits-button button iapp-button-small"><div class="iapp-button-text">Credits</div></div>\n        <div class="iapp-video-play-button button iapp-button-small"><div class="iapp-button-text">Pause</div></div>\n        <div class="iapp-video-replay-button button iapp-button-small"><div class="iapp-button-text">Replay</div></div>\n        \n        \n    </div>\n\n    ';
+ } else {;
+__p += '\n        <h4 class="iapp-video-share-link">Share this video</h4>\n    ';
  } ;
 __p += '\n\n</div>\n\n<div class="iapp-video-loader">\n    <div class="iapp-content-wrap">\n        <h2 class="iapp-video-question-loader">' +
 ((__t = ( questionasked )) == null ? '' : __t) +
