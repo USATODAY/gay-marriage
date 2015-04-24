@@ -33,7 +33,9 @@ define(
             'click .iapp-video-replay-button': 'onReplayClick',
             'click .iapp-video-play-button': 'onPlayClick',
             'click .iapp-video-topics-button': 'onTopicsClick',
-            'click .iapp-video-back-button': 'onTopicsClick'
+            'click .iapp-video-back-button': 'onTopicsClick',
+            'click .iapp-video-back-to-topics': 'onTopicsClick'
+ 
         },
         className: 'iapp-panel iapp-video-panel upcoming',
         template: templates['video.html'],
