@@ -211,16 +211,12 @@ define(
             console.log("video ended");
             if (this.collection._availableVids.length > 0) {
                 var selectedVideoModel = this.collection.pickVideo();
-                // Backbone.trigger('video:next', this.selectedVideoModel);
                 this.updateView(selectedVideoModel);
-                // Backbone.trigger('app:goBack');
             } else {
                  if (!config.isMobile) {
                     Backbone.trigger('index:show');
                 }
             }
-            
-            // this.onTopicsClick();
         },
 
         onVideoLoad: function() {
