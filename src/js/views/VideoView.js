@@ -143,7 +143,7 @@ define(
 
             var _this = this;
             _.delay(function() {
-                this.$('.iapp-video-loader').hide();
+                this.$('.iapp-video-loader').fadeOut();
                 _this.brightcoveView.playVideo();
             }, 3000);
 
@@ -212,7 +212,7 @@ define(
             console.log("video load");
             var _this = this;
             _.delay(function() {
-                this.$('.iapp-video-loader').hide();
+                this.$('.iapp-video-loader').fadeOut();
                 _this.brightcoveView.playVideo();
             }, 3000);
         }
