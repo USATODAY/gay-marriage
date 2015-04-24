@@ -1,0 +1,19 @@
+.iapp-video-desktop-controls {
+}
+
+.iapp-left-video-nav {
+    font-family: "Futura Today Light", Arial,sans-serif;
+    font-size: 16px;
+    left: 0;
+    list-style: none;
+    padding: 1em;
+    position: absolute;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+    text-transform: uppercase;
+    top: 100px;
+    z-index: 10;
+
+    li {
+        margin-bottom: 0.5em;
+    }
+}
