@@ -15,7 +15,7 @@ define(
         className: 'iapp-panel active iapp-intro-panel',
         template: templates['intro.html'],
         render: function(data) {
-            this.$el.html(this.template({head: data.project_head, chatter: data.intro_text, title: data.title}));
+            this.$el.html(this.template({head: data.project_head, chatter: data.intro_text, title: data.title, sub_title: data.sub_title}));
             this.renderVideo();
             return this;
         },

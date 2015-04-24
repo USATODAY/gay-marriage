@@ -125,24 +125,29 @@
     width: 100%;
     z-index: 500;
     .loader-img {
-        animation: spin 1s linear infinite;
+        animation: spin 2s linear infinite;
         display: block;
         height: 50px;
         width: 50px;
+    }
+    .loader-img-wrap {
+        position: static;
+        margin: 2em auto;
+        transform: translate(0, 0);
     }
 }
 
 .iapp-video-question-loader {
     color: white;
     font-size: 1em;
-    left: 50%;
-    position: absolute;
+    // left: 50%;
+    // position: absolute;
     text-align: center;
     text-transform: uppercase;
-    top: 50%;
-    transform: translate(-50%, -300%);
+    // top: 50%;
+    // transform: translate(-50%, -300%);
 
     @media (max-width: 800px) {
-        transform: translate(-50%, -150%);
+        // transform: translate(-50%, -150%);
     }
 }

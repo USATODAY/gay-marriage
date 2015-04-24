@@ -131,7 +131,9 @@ var __t, __p = '', __e = _.escape;
 with (obj) {
 __p += '<div class="iapp-intro-content-wrap iapp-content-wrap">\n    <div class="iapp-content-card">\n        <h2 class="iapp-intro-header iapp-panel-text-main">' +
 ((__t = (title)) == null ? '' : __t) +
-'</h2>\n        <div class="intro-next-button button"><div class="iapp-button-text">Begin</div></div>\n    </div>  \n</div>\n';
+'</h2>\n        <h3 class="iapp-intro-subtitle">' +
+((__t = (sub_title)) == null ? '' : __t) +
+'</h3>\n        <div class="intro-next-button button"><div class="iapp-button-text">Begin</div></div>\n    </div>  \n</div>\n';
 
 }
 return __p
@@ -281,9 +283,9 @@ __p += '\n    <h4 class=\'iapp-video-greeting\'>' +
 ((__t = (intro)) == null ? '' : __t) +
 '</h4>\n    ';
 };
-__p += '\n    \n    <div class="iapp-video-info-buttons">\n        <div class="iapp-video-more-button button iapp-button-large"><div class="iapp-button-text">More Videos</div></div>\n        <div class="iapp-video-discuss-button button iapp-button-small"><div class="iapp-button-text">Share</div></div>\n        <div class="iapp-video-credits-button button iapp-button-small"><div class="iapp-button-text">Credits</div></div>\n        <div class="iapp-video-play-button button iapp-button-small"><div class="iapp-button-text">Pause</div></div>\n        <div class="iapp-video-replay-button button iapp-button-small"><div class="iapp-button-text">Replay</div></div>\n        \n        \n    </div>\n</div>\n\n<div class="iapp-video-loader">\n    <h2 class="iapp-video-question-loader">' +
+__p += '\n    \n    <div class="iapp-video-info-buttons">\n        <div class="iapp-video-more-button button iapp-button-large"><div class="iapp-button-text">More Videos</div></div>\n        <div class="iapp-video-discuss-button button iapp-button-small"><div class="iapp-button-text">Share</div></div>\n        <div class="iapp-video-credits-button button iapp-button-small"><div class="iapp-button-text">Credits</div></div>\n        <div class="iapp-video-play-button button iapp-button-small"><div class="iapp-button-text">Pause</div></div>\n        <div class="iapp-video-replay-button button iapp-button-small"><div class="iapp-button-text">Replay</div></div>\n        \n        \n    </div>\n</div>\n\n<div class="iapp-video-loader">\n    <div class="iapp-content-wrap">\n    <h2 class="iapp-video-question-loader">' +
 ((__t = ( questionasked )) == null ? '' : __t) +
-'</h2>\n    <div class="loader-img-wrap">\n        <img class="loader-img" src="http://www.gannett-cdn.com/experiments/usatoday/2015/04/gay-marriage/img/loader-white.svg" alt="Loading">\n    </div>\n</div>\n';
+'</h2>\n    <div class="loader-img-wrap">\n        <img class="loader-img" src="http://www.gannett-cdn.com/experiments/usatoday/2015/04/gay-marriage/img/loader-white.svg" alt="Loading">\n    </div>\n    </div>\n</div>\n';
 
 }
 return __p
