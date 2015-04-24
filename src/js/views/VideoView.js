@@ -18,6 +18,8 @@ define(
         initialize: function() {
            this.listenTo(Backbone, "render:video", this.renderVideo); 
            this.listenTo(Backbone, "video:loaded", this.onVideoLoad);
+           this.listenTo(Backbone, "video:play", this.updatePlayButtonPlay);
+           this.listenTo(Backbone, "video:pause", this.updatePlayButtonPause);
            this.listenTo(Backbone, "video:ended", this.onVideoEnded);
            this.listenTo(Backbone, "get:video", this.onGetVideo);
            this.listenTo(Backbone, "update:video", this.updateView);
@@ -32,6 +34,7 @@ define(
             'click .iapp-video-credits-button': 'onCreditsClick',
             'click .iapp-video-replay-button': 'onReplayClick',
             'click .iapp-video-play-button': 'onPlayClick',
+            'click .iapp-center-video-play-button': 'onPlayClick',
             'click .iapp-video-topics-button': 'onTopicsClick',
             'click .iapp-video-back-button': 'onTopicsClick',
             'click .iapp-video-back-to-topics': 'onTopicsClick'
@@ -106,11 +109,21 @@ define(
                 if (result) {
                     _this.brightcoveView.pauseVideo();
                     _this.$('.iapp-video-play-button').find('.iapp-button-text').text("Play");
+                    _this.$('.iapp-center-video-play-button').addClass('play').removeClass('pause');
                 } else {
                     _this.brightcoveView.playVideo();
                     _this.$('.iapp-video-play-button').find('.iapp-button-text').text("Pause");
+                    _this.$('.iapp-center-video-play-button').addClass('pause').removeClass('play');
                 }
             }
+        },
+        updatePlayButtonPlay: function() {
+            this.$('.iapp-video-play-button').find('.iapp-button-text').text("Pause");
+            this.$('.iapp-center-video-play-button').addClass('pause').removeClass('play');
+        },
+        updatePlayButtonPause: function() {
+            this.$('.iapp-video-play-button').find('.iapp-button-text').text("Play");
+            this.$('.iapp-center-video-play-button').addClass('play').removeClass('pause');
         },
         onTopicsClick: function() {
             this.brightcoveView.pauseVideo();

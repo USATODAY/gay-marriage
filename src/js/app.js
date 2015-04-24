@@ -64,6 +64,15 @@ define(
                                     experience: experience
                                 });
                             });
+
+                            videoPlayer.addEventListener(brightcove.api.events.MediaEvent.PLAY, function(e) {
+                                console.log("play triggered");
+                                Backbone.trigger("video:play");
+                            });
+                            videoPlayer.addEventListener(brightcove.api.events.MediaEvent.STOP, function(e) {
+                                console.log("pause triggered");
+                                Backbone.trigger("video:pause");
+                            });
                         };
                     });
 

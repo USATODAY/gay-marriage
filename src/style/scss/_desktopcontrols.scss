@@ -50,6 +50,14 @@
     }
 }
 
+.iapp-play-icon, .iapp-pause-icon {
+    display: none;
+}
+
+.play .iapp-play-icon, .pause .iapp-pause-icon {
+    display: block;
+}
+
 .iapp-center-video-control-label {
     float: left;
 }
