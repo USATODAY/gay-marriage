@@ -1,4 +1,4 @@
-@media (min-width: 800px) {
+@media (min-width: $three-d-breakpoint) {
     .iapp-blur {
       transition: all 250ms ease;
       // filter: url(#blur);

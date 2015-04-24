@@ -13,6 +13,7 @@ example markup:
 
 ************/
 
+
 .iapp-flip-container {
 
 }
@@ -21,7 +22,7 @@ example markup:
     width: 100%;
     min-height: 100%;
     position: absolute;
-    @media (min-width: 600px) {
+    @media (min-width: $three-d-breakpoint) {
         perspective: 900px;
         .iapp-flip-front {
             transform: rotateY(0deg);
@@ -32,7 +33,7 @@ example markup:
         }    transform-style: preserve-3d;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: $three-d-breakpoint) {
         .iapp-flip-front {
             tranform: translate(0, 0);
         }
@@ -60,7 +61,7 @@ example markup:
 
     &.iapp-flipped {
 
-        @media (min-width: 600px) {
+        @media (min-width: $three-d-breakpoint) {
             .iapp-flip-front {
                 transform: rotateY(-180deg);
             }
@@ -70,7 +71,7 @@ example markup:
             }
         }
 
-        @media (max-width: 600px) {
+        @media (max-width: $three-d-breakpoint) {
             .iapp-flip-front {
                 transform: translate(100%, 0);
             }
