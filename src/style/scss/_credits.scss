@@ -1,9 +1,14 @@
 .iapp-credits-panel {
-    background-color: rgba(50, 50, 50, 0.8);
-    color: white;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: $dark-grey;
     filter: none;
     padding: 2em;
     z-index: 18;
+
+    .iapp-section-text {
+        margin: 1em 0;
+        line-height: 1.2;
+    }
 }
 
 .iapp-credits-close {
@@ -14,14 +19,14 @@
 }
 
 .iapp-project-credit-link {
-    color: white;
+    color: $dark-grey;
     text-decoration: none;
     transition: color 250ms ease;
     &:hover {
         color: $medium-grey;
     }
     &:visited {
-        color: white;
+        color: $dark-grey;
     }
 }
 

@@ -9,6 +9,9 @@
         margin: 1em auto;
         position: static;
         transform: none;
+        @media (max-width: 600px) {
+            padding: 0 0 1em 0;
+        }
     }
 }
 
