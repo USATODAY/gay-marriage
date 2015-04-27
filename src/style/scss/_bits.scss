@@ -19,6 +19,7 @@ $red: #e62319;
 $purple: #9d29ba;
 $teal: #1fc0bf;
 $yellow: #fbc124;
+$dark-black: #000000;
 
 $greater-color: #33b8f2;
 $less-color: #81d102;
@@ -70,7 +71,7 @@ Animations
 
 @keyframes fadeOut {
     0%   {opacity: 1; transform: scale(1);}
-   
+
     100% {opacity: 1;-webkit-transform: scale(0); visibility: collapse;}
 }
 
