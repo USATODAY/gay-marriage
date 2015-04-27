@@ -43,7 +43,6 @@ define(
             },
             onDataReady: function() {
                 this.render();
-                console.log(dataManager.data);
                 Backbone.history.start();
                 _.delay(function() {
                     this.$('.iapp-preloader').fadeOut(250);
@@ -70,8 +69,6 @@ define(
                 }
             },
             onVideoRoute: function(clip_name) {
-                console.log(clip_name);
-                console.log(dataManager.data);
 
                 
                 this.goToVideo(this.videoCollection.findWhere({'video_clip': clip_name}));
@@ -142,7 +139,6 @@ define(
             },
             goBack: function() {
                 var oldSub = this.subViews[this.currentSubView];
-                console.log("back");
                 this.currentSubView--;
                 var newSub = this.subViews[this.currentSubView];
 

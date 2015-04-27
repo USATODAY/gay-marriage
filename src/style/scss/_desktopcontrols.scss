@@ -15,6 +15,17 @@
 
     li {
         margin-bottom: 0.5em;
+        &:hover {
+            color: $dark-grey;
+        }
+    }
+
+    @media (min-width: 1200px) {
+        font-size: 18px;
+
+        li {
+            margin-bottom: 1em;
+        }
     }
 }
 
@@ -88,9 +99,15 @@
     width: 33.33%;
 }
 
-.iapp-video-share-link {
+.iapp-video-share-button {
     font-family: "Futura Today Light", Arial,sans-serif;
     font-size: 16px;
     text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
     text-transform: uppercase;
+    &:hover {
+        color: $dark-grey;
+    }
+    @media (min-width: 1200px) {
+        font-size: 18px;
+    }
 }

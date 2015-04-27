@@ -1,4 +1,12 @@
-<div class="iapp-video-back-button button iapp-button-small"><div class="iapp-button-text">Back to topics</div></div>
+<div class="iapp-video-back-button button iapp-button-small">
+    <div class="iapp-button-text">
+        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+             viewBox="0 0 600 400" enable-background="new 0 0 600 400" xml:space="preserve">
+        <polygon points="431.2,166.6 275.9,166.6 275.9,124.5 168.8,200 275.9,275.5 275.9,233.4 431.2,233.4 "/>
+        </svg>
+    </div>
+</div>
+<div class="iapp-button-text">Back to topics</div>
 
 <div class="iapp-video-info">
      <% if (userName != "") { %>
@@ -19,7 +27,7 @@
     </div>
 
     <% } else {%>
-        <h4 class="iapp-video-share-link">Share this video</h4>
+        <h4 class="iapp-video-share-button iapp-clickable">Share this video</h4>
     <% } %>
 
 </div>
@@ -39,9 +47,9 @@
     <ul class="iapp-left-video-nav">
         <li class="iapp-clickable iapp-video-back-to-topics">Back to Topics</li>
         <li class="iapp-clickable iapp-video-more-button">All Videos</li>
-        <li class="iapp-clickable">Comment</li>
+        <li class="iapp-clickable iapp-comment-button">Comment</li>
         <li class="iapp-clickable iapp-video-credits-button">About This Project</li>
-        <li class="iapp-clickable">Share This Project</li>
+        <li class="iapp-clickable iapp-project-share-button">Share This Project</li>
     </ul>
 
     <div class="iapp-center-video-controls">

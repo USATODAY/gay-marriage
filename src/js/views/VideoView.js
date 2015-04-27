@@ -5,14 +5,18 @@ define(
     'lib/BackboneRouter',
     'views/BrightcoveView',
     'views/ShareView',
+    'views/VideoShareView',
+    'views/ProjectShareView',
     'views/CreditView',
     'models/CreditsModel',
+    'models/ShareModel',
     'models/config',
+    'dataManager',
     'router',
     'templates',
     'api/analytics'
   ],
-  function(jQuery, _, Backbone, BrightcoveView, ShareView, CreditsView, CreditsModel, config, router, templates, Analytics) {
+  function(jQuery, _, Backbone, BrightcoveView, ShareView, VideoShareView, ProjectShareView, CreditsView, CreditsModel, ShareModel, config, dataManager, router, templates, Analytics) {
 
     return Backbone.View.extend({
         initialize: function() {
@@ -31,6 +35,8 @@ define(
         events: {
             'click .iapp-video-more-button': 'onMoreClick',
             'click .iapp-video-discuss-button': 'onShareClick',
+            'click .iapp-video-share-button': 'onVideoShareClick',
+            'click .iapp-project-share-button': 'onProjectShareClick',
             'click .iapp-video-credits-button': 'onCreditsClick',
             'click .iapp-video-replay-button': 'onReplayClick',
             'click .iapp-video-play-button': 'onPlayClick',
@@ -185,21 +191,59 @@ define(
 
             this.shareView.$el.addClass('active').removeClass('upcoming');
             this.brightcoveView.pauseVideo();
-            // $('.iapp-wrap').addClass('iapp-blur');
+        },
+        onVideoShareClick: function() {
+            Analytics.trackEvent('Video share button clicked');
+            this.brightcoveView.$el.addClass('iapp-blur');
+            this.$('.iapp-video-info').addClass('iapp-blur');
+            $('.iapp-header').addClass('iapp-blur');
+            $('.iapp-index-panel').addClass('iapp-blur');
+
+            this.videoShareView.$el.addClass('active').removeClass('upcoming');
+            this.brightcoveView.pauseVideo();
+        },
+        onProjectShareClick: function() {
+            Analytics.trackEvent('Project share button clicked');
+            this.brightcoveView.$el.addClass('iapp-blur');
+            this.$('.iapp-video-info').addClass('iapp-blur');
+            $('.iapp-header').addClass('iapp-blur');
+            $('.iapp-index-panel').addClass('iapp-blur');
+
+            this.projectShareView.$el.addClass('active').removeClass('upcoming');
+            this.brightcoveView.pauseVideo();
         },
         addShare: function() {
 
-            if (this.shareView === undefined) {
-                this.shareView = new ShareView({model:  this.selectedVideoModel});
-                $('.iapp-wrap').append(this.shareView.render().el);
+            if (config.isMobile) {
+                if (this.shareView === undefined) {
+                    this.shareView = new ShareView({model:  this.selectedVideoModel});
+                    $('.iapp-wrap').append(this.shareView.render().el);
+                } else {
+                    this.shareView.remove();
+                    this.shareView = new ShareView({model:  this.selectedVideoModel});
+                    $('.iapp-wrap').append(this.shareView.render().el);
+                }
+
+                this.shareView.addFbEmbed();
             } else {
-                this.shareView.remove();
-                this.shareView = new ShareView({model:  this.selectedVideoModel});
-                $('.iapp-wrap').append(this.shareView.render().el);
+                if (this.videoShareView === undefined) {
+                    console.log("add video share");
+                    this.videoShareView = new VideoShareView({model: this.selectedVideoModel});
+                    $('.iapp-wrap').append(this.videoShareView.render().el);
+                } else {
+                    this.videoShareView.remove();
+                    this.videoShareView = new VideoShareView({model: this.selectedVideoModel});
+                    $('.iapp-wrap').append(this.videoShareView.render().el);
+                }
+
+                if (this.projectShareView === undefined) {
+                    this.projectShareView = new ProjectShareView({model: new ShareModel({default_share_language: dataManager.data.project_share_text})});
+                    $('.iapp-wrap').append(this.projectShareView.render().el);
+                }
+            
             }
 
-            this.shareView.addFbEmbed();
-            
+                        
         },
         onShareClose: function() {
             this.brightcoveView.$el.removeClass('iapp-blur');

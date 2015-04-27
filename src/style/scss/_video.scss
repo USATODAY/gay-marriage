@@ -119,6 +119,14 @@
     &:hover {
         // background-color: white;
         // color: $dark-grey;
+        svg {
+            fill: white;
+        }
+    }
+
+    svg {
+        width: 100px;
+
     }
 }
 
