@@ -40,6 +40,7 @@ define(
             'click .iapp-comment-button': 'onCommentClick',
             'click .iapp-project-share-button': 'onProjectShareClick',
             'click .iapp-video-credits-button': 'onCreditsClick',
+            'click .iapp-video-home': 'onHomeClick',
             'click .iapp-video-replay-button': 'onReplayClick',
             'click .iapp-video-play-button': 'onPlayClick',
             'click .iapp-center-video-play-button': 'onPlayClick',
@@ -223,6 +224,11 @@ define(
 
             this.commentView.$el.addClass('active').removeClass('upcoming');
             this.brightcoveView.pauseVideo();
+        },
+        onHomeClick: function() {
+            Analytics.trackEvent('Home button clicked');
+            this.brightcoveView.pauseVideo();
+            Backbone.trigger("app:goHome");
         },
         addShare: function() {
 

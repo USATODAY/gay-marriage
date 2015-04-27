@@ -23,6 +23,7 @@ define(
             initialize: function() {
                 this.listenTo(Backbone, "dataReady", this.onDataReady);
                 this.listenTo(Backbone, "app:advance", this.goForward);
+                this.listenTo(Backbone, "app:goHome", this.goHome);
                 this.listenTo(Backbone, "app:goBack", this.goBack);
                 this.listenTo(Backbone, "name:set", this.onNameSet);
                 this.listenTo(Backbone, "router:video", this.onVideoRoute);
@@ -140,6 +141,14 @@ define(
             goBack: function() {
                 var oldSub = this.subViews[this.currentSubView];
                 this.currentSubView--;
+                var newSub = this.subViews[this.currentSubView];
+
+                oldSub.$el.removeClass('active').addClass('upcoming');
+                newSub.$el.removeClass('done').addClass('active');
+            },
+            goHome: function() {
+                var oldSub = this.subViews[this.currentSubView];
+                this.currentSubView = 0;
                 var newSub = this.subViews[this.currentSubView];
 
                 oldSub.$el.removeClass('active').addClass('upcoming');
