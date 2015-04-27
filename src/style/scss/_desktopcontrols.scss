@@ -34,7 +34,7 @@
     left: 50%;
     position: absolute;
     transform: translate(-50%, 0);
-    width: 16em;
+    width: 13em;
     z-index: 10;
 }
 
@@ -86,6 +86,7 @@
 
 .iapp-center-video-control-label {
     float: left;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
 }
 
 .iapp-center-video-controls-label-wrap {

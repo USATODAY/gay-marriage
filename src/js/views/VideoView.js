@@ -8,6 +8,7 @@ define(
     'views/VideoShareView',
     'views/ProjectShareView',
     'views/CreditView',
+    'views/CommentView',
     'models/CreditsModel',
     'models/ShareModel',
     'models/config',
@@ -16,7 +17,7 @@ define(
     'templates',
     'api/analytics'
   ],
-  function(jQuery, _, Backbone, BrightcoveView, ShareView, VideoShareView, ProjectShareView, CreditsView, CreditsModel, ShareModel, config, dataManager, router, templates, Analytics) {
+  function(jQuery, _, Backbone, BrightcoveView, ShareView, VideoShareView, ProjectShareView, CreditsView, CommentView, CreditsModel, ShareModel, config, dataManager, router, templates, Analytics) {
 
     return Backbone.View.extend({
         initialize: function() {
@@ -36,6 +37,7 @@ define(
             'click .iapp-video-more-button': 'onMoreClick',
             'click .iapp-video-discuss-button': 'onShareClick',
             'click .iapp-video-share-button': 'onVideoShareClick',
+            'click .iapp-comment-button': 'onCommentClick',
             'click .iapp-project-share-button': 'onProjectShareClick',
             'click .iapp-video-credits-button': 'onCreditsClick',
             'click .iapp-video-replay-button': 'onReplayClick',
@@ -212,6 +214,16 @@ define(
             this.projectShareView.$el.addClass('active').removeClass('upcoming');
             this.brightcoveView.pauseVideo();
         },
+        onCommentClick: function() {
+            Analytics.trackEvent('Comment button clicked');
+            this.brightcoveView.$el.addClass('iapp-blur');
+            this.$('.iapp-video-info').addClass('iapp-blur');
+            $('.iapp-header').addClass('iapp-blur');
+            $('.iapp-index-panel').addClass('iapp-blur');
+
+            this.commentView.$el.addClass('active').removeClass('upcoming');
+            this.brightcoveView.pauseVideo();
+        },
         addShare: function() {
 
             if (config.isMobile) {
@@ -239,6 +251,12 @@ define(
                 if (this.projectShareView === undefined) {
                     this.projectShareView = new ProjectShareView({model: new ShareModel({default_share_language: dataManager.data.project_share_text})});
                     $('.iapp-wrap').append(this.projectShareView.render().el);
+                }
+
+                if (this.commentView === undefined) {
+                    this.commentView = new CommentView();
+                    $('.iapp-wrap').append(this.commentView.render().el);
+                    this.commentView.addFBEmbed();
                 }
             
             }

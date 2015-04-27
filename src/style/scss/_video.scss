@@ -110,22 +110,19 @@
 
 .iapp-video-back-button {
     border: solid 5px white;
-    // color: white;
     position: absolute;
     right: 1em;
-    // text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
     top: 1em;
     z-index: 12;
     &:hover {
-        // background-color: white;
-        // color: $dark-grey;
         svg {
             fill: white;
         }
     }
 
     svg {
-        width: 100px;
+        width: 80px;
+        margin-top: 5px;
 
     }
 }
