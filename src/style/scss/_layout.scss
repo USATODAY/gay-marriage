@@ -106,11 +106,16 @@ panel positions
   position: absolute;
   top: 1em;
   transition: opacity 500ms ease;
-  width: 150px;
+  width: 200px;
   z-index: 10;
 
   &.iapp-fadeOut {
     opacity: 0;
+  }
+
+  img {
+    clear: both;
+    width: 150px;
   }
 }
 

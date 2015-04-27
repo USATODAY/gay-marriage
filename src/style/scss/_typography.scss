@@ -67,3 +67,16 @@ strong {
       }
   }
 }
+
+.title-letter {
+    // font-size: 0.7em;
+    margin-right: -0.20em;
+    position: relative;
+}
+
+.title-letter0, .title-letter6, .title-letter12 { color: $flag-purple; }
+.title-letter1, .title-letter7, .title-letter13 { color: $flag-blue; }
+.title-letter2, .title-letter8 { color: $flag-green; }
+.title-letter3, .title-letter9 { color: $flag-yellow; }
+.title-letter4, .title-letter10 { color: $flag-orange; }
+.title-letter5, .title-letter11 { color: $flag-red; }
