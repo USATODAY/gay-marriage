@@ -19,7 +19,7 @@
 }
 
 .iapp-center-video-controls {
-    bottom: 0.5em;
+    bottom: 1.5em;
     left: 50%;
     position: absolute;
     transform: translate(-50%, 0);
@@ -38,6 +38,10 @@
             width: 100px;
         }
 
+        svg.iapp-pause-icon, svg.iapp-play-icon {
+            width: 120px;
+        }
+
         &:hover {
             svg {
                 fill: white;
@@ -50,9 +54,20 @@
     }
 }
 
+.iapp-center-video-replay-button, .iapp-center-video-next-button {
+    svg {
+        margin-top: 10px;
+    }
+}
+
+.iapp-play-icon {
+    transform: translate(5px, 0);
+}
+
 .iapp-play-icon, .iapp-pause-icon {
     display: none;
 }
+
 
 .play .iapp-play-icon, .pause .iapp-pause-icon {
     display: block;
