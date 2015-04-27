@@ -5,26 +5,32 @@
   border: solid 4px white;
   color: $dark-grey;
   font-size: 1em;
-  height: 5em;
+  height: 4em;
   line-height: 1.2;
   margin: 0 auto;
-  opacity: 1;
+  opacity: 0.8;
   position: relative;
   text-align: center;
   text-transform: uppercase;
   transition: all .5s;
-  width: 5em;
+  width: 4em;
   &:hover{
     @include BoxShadowHelper(2);
     border: solid 4px $dark-grey;
     color: white;
     cursor: pointer;
     background-color: $dark-grey;
-    transition: all .5s;
+    svg {
+        fill: white;
+    }
   }
 
   &.hide {
     opacity: 0;
+  }
+  svg {
+    width: 80px;
+    margin-top: 5px;
   }
 }
 
@@ -42,8 +48,8 @@
 }
 
 .iapp-button-small {
-  height: 4em;
-  width: 4em;
+  height: 3em;
+  width: 3em;
   .iapp-button-text {
     font-size: 0.75em;
   }
