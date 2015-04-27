@@ -151,7 +151,7 @@ define(
         updateView: function(newVideoModel) {
 
 
-            this.$('.iapp-video-loader').show();
+            this.$('.iapp-video-loader').removeClass('done');
 
             this.selectedVideoModel = newVideoModel;
             router.navigate('video/' + this.selectedVideoModel.get('video_clip'));
@@ -175,7 +175,7 @@ define(
 
             var _this = this;
             _.delay(function() {
-                this.$('.iapp-video-loader').fadeOut();
+                this.$('.iapp-video-loader').addClass('done');
                 _this.brightcoveView.playVideo();
             }, 3000);
 
@@ -299,7 +299,7 @@ define(
             console.log("video load");
             var _this = this;
             _.delay(function() {
-                this.$('.iapp-video-loader').fadeOut();
+                this.$('.iapp-video-loader').addClass('done');
                 _this.brightcoveView.playVideo();
             }, 3000);
         }

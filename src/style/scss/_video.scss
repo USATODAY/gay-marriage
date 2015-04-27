@@ -131,6 +131,8 @@
     background: $medium-grey;
     height: 100%;
     position: absolute;
+    transform: translate(0, 0);
+    transition: transform 500ms ease;
     width: 100%;
     z-index: 500;
     .loader-img {
@@ -143,6 +145,9 @@
         position: static;
         margin: 2em auto;
         transform: translate(0, 0);
+    }
+    &.done {
+        transform: translate(0, -100%);
     }
 }
 
