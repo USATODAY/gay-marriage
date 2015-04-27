@@ -39,7 +39,6 @@ define(
                 'first_name': helper.cleanTag(this.get('first_name')),
                 'isMobile': config.isMobile
             });
-            console.log(this.toJSON());
             
 
             this.listenTo(Backbone, 'name:set', this.onUserSet);
