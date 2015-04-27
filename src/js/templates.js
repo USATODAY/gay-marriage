@@ -163,7 +163,9 @@ __p += '<a href="' +
 ((__t = (link_image)) == null ? '' : __t) +
 '" alt="' +
 ((__t = (link_text)) == null ? '' : __t) +
-'" class="iapp-person-item-img">\n        <div class="iapp-person-more-video-button">\n            See Project\n        </div>\n    </div>\n</a>\n';
+'" class="iapp-person-item-img">\n        <div class="iapp-person-more-video-button">\n            See Project\n        </div>\n    </div>\n</a>\n<div class="iapp-person-text">\n    <h3 class="iapp-person-name">' +
+((__t = (link_text)) == null ? '' : __t) +
+'</h3>\n</div>\n\n';
 
 }
 return __p
