@@ -157,7 +157,7 @@ this["templates"]["otherProjectLink.html"] = function(obj) {
 obj || (obj = {});
 var __t, __p = '', __e = _.escape;
 with (obj) {
-__p += '<a href="' +
+__p += '<div class="iapp-project-promo">\n<a href="' +
 ((__t = (link_url)) == null ? '' : __t) +
 '" >\n    <div class="iapp-person-image-wrap iapp-clickable">\n        <img src="' +
 ((__t = (link_image)) == null ? '' : __t) +
@@ -165,7 +165,9 @@ __p += '<a href="' +
 ((__t = (link_text)) == null ? '' : __t) +
 '" class="iapp-person-item-img">\n        <div class="iapp-person-more-video-button">\n            See Project\n        </div>\n    </div>\n</a>\n<div class="iapp-person-text">\n    <h3 class="iapp-person-name">' +
 ((__t = (link_text)) == null ? '' : __t) +
-'</h3>\n</div>\n\n';
+'</h3>\n    <p class="iapp-person-bio">' +
+((__t = (link_info)) == null ? '' : __t) +
+'</p>\n</div>\n</div>\n';
 
 }
 return __p
