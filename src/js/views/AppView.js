@@ -75,9 +75,10 @@ define(
                 this.goToVideo(this.videoCollection.findWhere({'video_clip': clip_name}));
             },
             render: function() {
-               this.$el.append(this.template({logo: this.logoURL, title: dataManager.data.title, page_url: this.getURL()}));
-               this.addSubViews();
-               return this;
+                var splitTitle = dataManager.data.title.split("");
+                this.$el.append(this.template({logo: this.logoURL, title: dataManager.data.title, page_url: this.getURL(), split_title: splitTitle}));
+                this.addSubViews();
+                return this;
             },
             template: templates["app.html"],
             subViews: [],
