@@ -53,11 +53,11 @@ define(
         },
         goToNext: function() {
 
-            var $input = this.$('.iapp-name-input');
-            $input.blur();
-            this.userName = $input.val();
+            // var $input = this.$('.iapp-name-input');
+            // $input.blur();
+            // this.userName = $input.val();
             Backbone.trigger("app:advance");
-            Backbone.trigger("name:set", this.userName);
+            Backbone.trigger("name:set", "");
         },
         getGreeting: function() {
             var greetings = ['Good morning.', 'Good afternoon.', 'Good evening.'];
