@@ -39,12 +39,9 @@ define(
                                 $('.iapp-wrap').addClass('tablet');
                             }
                         }
-                        console.log('pym:');
-                        console.log(pym);
 
                         //set global callback for Brightcove videos to use
                         window.onTemplateReady = function(evt) {
-                            console.log("video ready handler window");
                             var APIModules = brightcove.api.modules.APIModules;
                             var player = brightcove.api.getExperience(evt.target.experience.id);
                             var videoPlayer = player.getModule(APIModules.VIDEO_PLAYER);
